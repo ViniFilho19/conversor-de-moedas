@@ -1,62 +1,9 @@
-<!--<template>
-  <div class="conversor">
-    <h2>dolar para Real</h2>
-    <input v-model="dolar" type="number" placeholder="Valor em dólares"/>
-    <button type="button" v-on:click="convert">Converter</button>
-    
-    
-  </div>
-</template>
 
-<script>
- /* eslint-disable */ export default {
-  name: 'Conversor',
-  data() {
-    return {
-      dolar: '',
-      real: null,
-      cotacao: 5.25 
-    };
-  },
-  methods: {
-    convert() {
-      this.real = (this.dolar * this.cotacao).toFixed(2);
-    }
-  }
-};
-<template>
-  <div class="conversor">
-      <h2>{{ moedaA }} para {{ moedaB }}</h2>
-      <input type="text" v-model="moedaA_valor" v-bind:placeholder="moedaA" />
-      <input type="button" value="Converter" v-on:click="converter"/>
-      <p v-if="moedaA_valor !== null">Valor em reais: R$ {{ moedaB_valor }}</p>
-    </div>
-  </template>
-  
-  <script>
-  /* eslint-disable */
-  export default {
-    name: 'Conversor',
-    props: ['moedaA', 'moedaB'],
-    data() {
-      return {
-        moedaA_valor: '',
-        moedaB_valor: 0
-      };
-    },
-    methods: {
-      converter() {
-        console.log(this.moedaB_valor)
-        const taxaConversao = 5.63;
-        this.moedaB_valor = (parseFloat(this.moedaA_valor) * taxaConversao).toFixed(2);
-      }
-    }
-  };-->
 
 
   <template>     
     <div class="conversor" >
-      <h2>Conversor de Moedas</h2>
+      <h2 class="text">Conversor de Moedas</h2>
       <label for="moedaOrigem">De:</label>
       <select v-model="moedaOrigem" id="moedaOrigem">
         <option v-for="(cotacao, moeda) in cotacoes" :key="moeda" :value="moeda">{{ moeda }}</option>
@@ -67,7 +14,7 @@
         <option v-for="(cotacao, moeda) in cotacoes" :key="moeda" :value="moeda">{{ moeda }}</option>
       </select>
   
-      <input v-model="valorOrigem" type="number" placeholder="Valor" />
+      <input  v-model="valorOrigem" type="number" placeholder="Valor" />
       <button type="button" v-on:click="convert">Converter</button>
       
       <p v-if="valorDestino !== null">Valor em {{ moedaDestino }}: {{ valorDestino }}</p>
@@ -117,14 +64,7 @@
 .conversor {
   padding: 20px;
   min-width: 100px;
-}
-
-text[type="text"] { 
- margin-top: 40px;
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  
+  box-shadow: 0 4px 8px 0 rgba(rgb(0, 0, 0, 0.2));
 }
 
 button[type="button"] {
@@ -137,9 +77,8 @@ button[type="button"] {
   margin-left: 10px;
 }
 
-button[type="button"]:hover {
-  background-color: #0056b3;
-}
+
+
 </style>
 
 
