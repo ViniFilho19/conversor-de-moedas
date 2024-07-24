@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Conversor moeda-a="USD" moeda-b="BRL"/>
+   
+
+   
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Conversor from './components/Conversor.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Conversor
   }
-}
+};
 </script>
 
 <style>
@@ -26,3 +28,50 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<template>
+  <div id="app">
+    <Converter moeda-a="USD" moeda-b="BRL"/>
+  </div>
+</template>
+
+<script>
+  /* eslint-disable */
+
+
+import Conversor from "./components/Conversor.vue";
+
+
+export default {
+  name: "app",
+  components: {
+    Conversor,
+  }
+  
+};
+</script>
+
+<style>
+
+</style>-->
